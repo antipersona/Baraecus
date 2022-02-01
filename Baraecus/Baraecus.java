@@ -1,3 +1,7 @@
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
 import ocean.Ocean;
 
 public class Baraecus {
@@ -10,7 +14,21 @@ public class Baraecus {
         int y = 16;
         ocean = new Ocean(x, y, seed);
         ocean.create();
-        System.out.println(ocean.toString());
+        out();
+    }
+
+    public static void out() {
+        String file = "output.txt";
+        try {
+            FileWriter fw = new FileWriter(file);
+            BufferedWriter bw = new BufferedWriter(fw);
+            bw.write(ocean.toString());
+            bw.close();
+            fw.close();
+        }
+        catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
     }
 
 }
