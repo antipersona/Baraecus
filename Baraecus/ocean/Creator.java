@@ -11,15 +11,17 @@ public class Creator {
 
     int MAX_Y, MAX_X;
 
-    public Creator(int MAX_Y, int MAX_X) {
+    public Creator(int MAX_X, int MAX_Y) {
         this.MAX_X = MAX_X;
         this.MAX_Y = MAX_Y;
+        matrix = new Default[MAX_X][MAX_Y];
     }
 
     public void createLandscape(boolean floor, boolean waves, int airY) {
         Default insert;
-        for(int x = 0; x < MAX_X; x++) {
-            for (int y = 0; y < MAX_Y; y++) {
+
+        for (int y = 0; y < MAX_Y; y++){
+            for(int x = 0; x < MAX_X; x++)  {
 
                 if (y < airY) {
                     insert = new Air(x, y);
