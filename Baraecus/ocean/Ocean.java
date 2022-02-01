@@ -36,7 +36,8 @@ public class Ocean {     //se encarga de crear el oceano
         StringBuilder str = new StringBuilder();
         for (int y = 0; y < MAX_Y; y++){
             for(int x = 0; x < MAX_X; x++)  {
-                str.append( creator.getNameinPos(x, y));
+                str.append(creator.getNameinPos(x, y));
+                str.append(" ");
             }
             str.append("\n");
         }
