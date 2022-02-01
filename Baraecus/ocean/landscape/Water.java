@@ -6,7 +6,7 @@ public class Water extends Default {
     
     public Water(int x, int y) {
         super(x,y);
-        symbol = 'W';
+        symbol = "W";
         name = "water";
     }
 

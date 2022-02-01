@@ -45,7 +45,7 @@ public class Creator {
         return matrix[x][y];
     }
 
-    public char getSymbolinPos(int x, int y) {
+    public String getSymbolinPos(int x, int y) {
         return matrix[x][y].symbol;
     }
 
