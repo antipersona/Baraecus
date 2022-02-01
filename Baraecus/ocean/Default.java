@@ -13,4 +13,8 @@ public abstract class Default {
         this.x = x;
         this.y = y;
     }
+
+    public String getName() {
+        return name;
+    }
 }

@@ -19,6 +19,7 @@ public class Baraecus {
     }
 
     public static void out() {
+        
         String file = "output.txt";
         try {
             FileWriter fw = new FileWriter(file);

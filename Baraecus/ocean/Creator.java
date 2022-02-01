@@ -45,8 +45,8 @@ public class Creator {
         return matrix[x][y];
     }
 
-    public String getSymbolinPos(int x, int y) {
-        return matrix[x][y].symbol;
+    public String getNameinPos(int x, int y) {
+        return matrix[x][y].getName();
     }
 
 
