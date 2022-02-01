@@ -48,3 +48,5 @@ hacer una capa de fondo, otra de elementos en plan nubes y eso, otra para los de
 bash
 
 hardware🪨🐚🦪🗿🏺
+
+a lo mejor deberia hacer un archivo externo para las probabilidades
