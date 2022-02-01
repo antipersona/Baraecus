@@ -6,7 +6,7 @@ public class Air extends Default {
 
     public Air(int x, int y) {
         super(x,y);
-        symbol = "A";
+        symbol = " ";
         name = "air";
     }
 }
