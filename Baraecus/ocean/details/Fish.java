@@ -1,16 +1,17 @@
 package ocean.details;
 
 import ocean.Default;
+import ocean.Ocean;
 import ocean.random.RandomNumbers;
 
 public class Fish extends Default{
-    private String[] names = { "fish0", "fish1", "fish2", "oyster", "moai", "pitcher" };
-    private String[] symbols = { "🐡", "🐠", "🐟", "🦪", "🗿", "🏺" };
+    private String[] names = { "fish0", "fish1", "fish2"};
+    private String[] symbols = { "🐡", "🐠", "🐟"};
     private int type;
 
-    public Fish(int x, int y) {
-        super(x, y);
-        type = (int) Math.round(RandomNumbers.randFreq() * 2);
+    public Fish(int x, int y, Ocean ocean) {
+        super(x, y, ocean);
+        type = RandomNumbers.randInt(names.length - 1);
         name = getName();
         symbol = getSymbol();
     }

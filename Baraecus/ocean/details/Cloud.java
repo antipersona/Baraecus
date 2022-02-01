@@ -1,12 +1,13 @@
 package ocean.details;
 
 import ocean.Default;
+import ocean.Ocean;
 
 
 public class Cloud extends Default{
 
-    public Cloud(int x, int y) {
-        super(x, y);
+    public Cloud(int x, int y, Ocean ocean) {
+        super(x, y, ocean);
         symbol = " ";
         name = "air";
     }

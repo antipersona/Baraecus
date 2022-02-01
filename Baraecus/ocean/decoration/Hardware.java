@@ -1,6 +1,7 @@
 package ocean.decoration;
 
 import ocean.Default;
+import ocean.Ocean;
 import ocean.random.RandomNumbers;
 
 public class Hardware extends Default {
@@ -9,9 +10,9 @@ public class Hardware extends Default {
     private String[] symbols = {"🍍", "🪨", "🐚", "🦪", "🗿", "🏺" };
     private int type;
 
-    public Hardware(int x, int y) {
-        super(x, y);
-        type = (int) Math.round(RandomNumbers.randFreq() * 5);
+    public Hardware(int x, int y, Ocean ocean) {
+        super(x, y, ocean);
+        type = RandomNumbers.randInt(names.length - 1);
         name = getName();
         symbol = getSymbol();
     }

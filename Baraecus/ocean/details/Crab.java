@@ -1,6 +1,7 @@
 package ocean.details;
 
 import ocean.Default;
+import ocean.Ocean;
 import ocean.random.RandomNumbers;
 
 public class Crab extends Default {
@@ -9,9 +10,9 @@ public class Crab extends Default {
     private String[] symbols = { "🦞", "🦀" };
     private int type;
 
-    public Crab(int x, int y) {
-        super(x, y);
-        type = (int) Math.round(RandomNumbers.randFreq());
+    public Crab(int x, int y, Ocean ocean) {
+        super(x, y, ocean);
+        type = RandomNumbers.randInt(names.length - 1);
         name = getName();
         symbol = getSymbol();
     }

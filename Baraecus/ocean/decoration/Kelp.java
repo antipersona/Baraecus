@@ -1,11 +1,12 @@
 package ocean.decoration;
 
 import ocean.Default;
+import ocean.Ocean;
 
 public class Kelp extends Default {
 
-    public Kelp(int x, int y) {
-        super(x, y);
+    public Kelp(int x, int y, Ocean ocean) {
+        super(x, y, ocean);
         name = "kelp";
         symbol = "K";
     }

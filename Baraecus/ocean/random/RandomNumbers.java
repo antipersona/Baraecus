@@ -9,7 +9,12 @@ public class RandomNumbers {
 		rand = new Random(seed);		
 	}
 
-	public static Double randFreq() { 
+	public static Double randFreq() {
 		return rand.nextDouble();
+	}
+	
+	public static int randInt(int m) {
+		return rand.nextInt(m);
+		
 	}
 }

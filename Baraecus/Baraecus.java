@@ -3,6 +3,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 import ocean.Ocean;
+import ocean.random.RandomNumbers;
 
 public class Baraecus {
 
@@ -10,6 +11,7 @@ public class Baraecus {
     private static long seed;
     public static void main(String[] args) {
         seed = System.currentTimeMillis() % 1000;
+        new RandomNumbers(seed);
         int x = 50;
         int y = 16;
         ocean = new Ocean(x, y, seed);

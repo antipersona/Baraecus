@@ -1,6 +1,6 @@
 hay que encotrar la manera de que los grupos se repartan en las dos corrdenadas
 
-quiero hacer volcanes
+quiero hacer volcanes <- nu
 
 podria hacer distintos climas en el futuro, seria similar a lo de level
 

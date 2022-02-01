@@ -16,7 +16,7 @@ public class Ocean {     //se encarga de crear el oceano
 
 
     public Ocean(int MAX_X, int MAX_Y, long seed) {
-        creator = new Creator(MAX_X, MAX_Y);
+        creator = new Creator(MAX_X, MAX_Y, this);
         this.MAX_X = MAX_X;
         this.MAX_Y = MAX_Y;
     }
@@ -26,6 +26,7 @@ public class Ocean {     //se encarga de crear el oceano
                 
         for(int z = 0; z < layers; z++) {
             creator.createLandscape(floor, waves, airY);
+            creator.createDecoration(floor, airY);
         }
 
     }
@@ -43,23 +44,41 @@ public class Ocean {     //se encarga de crear el oceano
     }
 
     private void landscape_atributes() {
-        floor = false; waves = false;
+        floor = false;
+        waves = false;
         RandomNumbers.randFreq();
 
         airY = (int) (RandomNumbers.randFreq() * landscape_atributes[0] * MAX_Y);
 
-        if (landscape_atributes[1] > RandomNumbers.randFreq() + airY / MAX_Y ) {
+        if (landscape_atributes[1] > RandomNumbers.randFreq() + airY / MAX_Y) {
             floor = true;
         }
 
         if (landscape_atributes[2] > RandomNumbers.randFreq()) {
             waves = true;
         }
-
-        
-    } 
-
+    }
     
+
+    public boolean isUnderWater(int y) {
+        return y < airY;
+    }
+
+    public boolean isAir(int y) {
+        return airY != 0;
+    }
+    
+    public int getWaves(int y) {
+        return airY;
+    }
+
+    public int getFloor() {
+        return MAX_Y - 2;
+    }
+    
+    public boolean isFloor() {
+        return floor;
+    }
     
     public int getMaxY() {
         return MAX_Y;

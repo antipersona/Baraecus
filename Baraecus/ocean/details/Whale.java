@@ -1,11 +1,11 @@
 package ocean.details;
 
-
+import ocean.Ocean;
 
 public class Whale extends Animal{
 
-    public Whale(int x, int y) {
-        super(x,y);
+    public Whale(int x, int y, Ocean ocean) {
+        super(x, y, ocean);
         lungs = true;
         water = true;
         air = true;
