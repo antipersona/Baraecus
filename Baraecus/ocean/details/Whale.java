@@ -9,7 +9,6 @@ public class Whale extends Animal{
         lungs = true;
         water = true;
         air = true;
-        groups = true;
     }
 
     @Override

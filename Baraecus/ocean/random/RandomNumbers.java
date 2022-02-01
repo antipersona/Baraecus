@@ -3,13 +3,13 @@ package ocean.random;
 import java.util.Random;
 
 public class RandomNumbers {
-   private Random rand; 
+   private static Random rand; 
    
    public RandomNumbers(long seed) { 
 		rand = new Random(seed);		
 	}
 
-	public Double randFreq() { 
+	public static Double randFreq() { 
 		return rand.nextDouble();
 	}
 }

@@ -4,7 +4,6 @@ import ocean.random.RandomNumbers;
 
 public class Ocean {     //se encarga de crear el oceano
 
-    private RandomNumbers rand;
     private Creator creator;
     private int MAX_Y, MAX_X;
     private final int layers = 3;
@@ -17,7 +16,6 @@ public class Ocean {     //se encarga de crear el oceano
 
 
     public Ocean(int MAX_X, int MAX_Y, long seed) {
-        rand = new RandomNumbers(seed);
         creator = new Creator(MAX_X, MAX_Y);
         this.MAX_X = MAX_X;
         this.MAX_Y = MAX_Y;
@@ -46,15 +44,15 @@ public class Ocean {     //se encarga de crear el oceano
 
     private void landscape_atributes() {
         floor = false; waves = false;
-        rand.randFreq();
+        RandomNumbers.randFreq();
 
-        airY = (int) (rand.randFreq() * landscape_atributes[0] * MAX_Y);
+        airY = (int) (RandomNumbers.randFreq() * landscape_atributes[0] * MAX_Y);
 
-        if (landscape_atributes[1] > rand.randFreq() + airY / MAX_Y ) {
+        if (landscape_atributes[1] > RandomNumbers.randFreq() + airY / MAX_Y ) {
             floor = true;
         }
 
-        if (landscape_atributes[2] > rand.randFreq()) {
+        if (landscape_atributes[2] > RandomNumbers.randFreq()) {
             waves = true;
         }
 
