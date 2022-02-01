@@ -4,7 +4,8 @@ import ocean.Default;
 
 public class Sand extends Default {
     
-    public Sand() {
+    public Sand(int x, int y) {
+        super(x,y);
         symbol = 'S';
         name = "sand";
     }

@@ -4,7 +4,8 @@ import ocean.Groups;
 
 public class Whale extends Organism implements Groups {
 
-    public Whale() {
+    public Whale(int x, int y) {
+        super(x,y);
         lungs = true;
         water = true;
         air = true;
