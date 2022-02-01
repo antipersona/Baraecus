@@ -1,6 +1,6 @@
 package ocean;
 
-public abstract class Default {
+public abstract class Default implements Groups {
 
     protected int x, y;
     protected int quantity;
@@ -16,5 +16,15 @@ public abstract class Default {
 
     public String getName() {
         return name;
+    }
+
+    @Override
+    public double getProbabilityX(int quantity, int max_q) {
+        return 0;
+    }
+
+    @Override
+    public double getProbabilityY(int quantity, int max_q) {
+        return 0;
     }
 }
