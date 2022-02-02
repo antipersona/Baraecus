@@ -1,7 +1,10 @@
 package ocean.decoration;
 
+import java.util.Random;
+
 import ocean.Default;
 import ocean.Ocean;
+import ocean.random.RandomNumbers;
 
 public class Kelp extends Default {
 
@@ -21,7 +24,7 @@ public class Kelp extends Default {
         if (grow_cycle > max_q) {
             return 0;
         }
-        return defGroupProbability + Math.abs(1/(grow_cycle - 5)) - 0.1;
+        return defGroupProbability + 0.1 - RandomNumbers.randFreq()/2 + RandomNumbers.randFreq()/2;
     }
     
 }

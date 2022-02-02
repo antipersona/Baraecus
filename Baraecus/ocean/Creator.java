@@ -51,37 +51,38 @@ public class Creator {
 
         int sum = 0, all = MAX_X * MAX_Y;
         int cycle = 0;
-        while (all > sum) {
+        while (cycle < 13) {
             sum = 0;
  
             for (int y = 0; y < MAX_Y; y++) {
                 for (int x = 0; x < MAX_X; x++) {
 
-                    if (cycle == 0 && y == ocean.getFloor()) {
+                    if (cycle == 0 && y == ocean.getFloor() && floor) {
                         switch (RandomNumbers.randInt( 2 * (NUMBER_OF_DECORATIONS - 1))) {
                             case 0:
-                                if (floor)
-                                    matrix[x][y] = new Alga(x, y, ocean);
+                                matrix[x][y] = new Alga(x, y, ocean);
 
                                 break;
                             case 1:
-                                if (floor)
-                                    matrix[x][y] = new Hardware(x, y, ocean);
+                                matrix[x][y] = new Hardware(x, y, ocean);
 
                                 break;
                             case 3:
                                 if ( x != 0 && !matrix[x - 1][y].isOn())
                                     matrix[x][y] = new Kelp(x, y, ocean);
-
                                 break;
                         }
                     }
+                    if (!floor && y == ocean.getFloor() + 1) {
+                        if ( x != 0 && !matrix[x - 1][y].isOn())
+                            matrix[x][y] = new Kelp(x, y, ocean);
+                    }
+
 
                     if (matrix[x][y].isOn()) {
                         if (grow(x, y, cycle)) {
                             sum--;
                         }
-                        matrix[x][y].turnOff();
                     } else {
                         sum++;
                     }
@@ -93,14 +94,14 @@ public class Creator {
 
     private Boolean grow(int x, int y, int cycle) {
         Boolean ret = false;
-        if( matrix[x][y].getProbabilityY(cycle) > RandomNumbers.randFreq()) {
-            matrix[x][y - 1] = matrix[x][y];
-            matrix[x][y+1].addY();
+        if( matrix[x][y].getProbabilityY(cycle) > RandomNumbers.randFreq() && y >= 1) {
+            matrix[x][(y - 1)%MAX_Y] = matrix[x][y];
+            matrix[x][(y - 1)%MAX_Y].addY();
             ret = true;
         }
         if( matrix[x][y].getProbabilityX(cycle) > RandomNumbers.randFreq()) {
-            matrix[x + 1][y] = matrix[x][y];
-            matrix[x + 1][y].addX();
+            matrix[(x + 1)%MAX_X][y] = matrix[x][y];
+            matrix[(x + 1)%MAX_X][y].addX();
             ret = true;
         }
         return ret;
