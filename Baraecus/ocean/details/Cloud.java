@@ -13,16 +13,16 @@ public class Cloud extends Default{
     }
 
     @Override
-    public double getProbabilityX(int quantity, int max_q) {
-        if (quantity > max_q) {
+    public double getProbabilityX(int grow_cycle) {
+        if (grow_cycle > max_q) {
             return 0;
         }
         return defGroupProbability;
     }
 
     @Override
-    public double getProbabilityY(int quantity, int max_q) {
-        if (quantity > max_q) {
+    public double getProbabilityY(int grow_cycle) {
+        if (grow_cycle > max_q) {
             return 0;
         }
         return 0.1;

@@ -52,7 +52,7 @@ public class Creator {
         int sum = 0, all = MAX_X * MAX_Y;
         int cycle = 0;
         while (all > sum) {
-            for (int y = MAX_Y - 1; y >= 0; y--) {
+            for (int y = 0; y < MAX_Y; y++) {
                 for (int x = 0; x < MAX_X; x++) {
 
                     if (cycle == 0 && y == ocean.getFloor()) {
@@ -76,7 +76,7 @@ public class Creator {
                     }
 
                     if (matrix[x][y].isOn()) {
-                        grow(x, y);
+                        grow(x, y, cycle);
                         matrix[x][y].turnOff();
                     } else {
                         sum++;
@@ -88,8 +88,15 @@ public class Creator {
         cycle++;
     }
 
-    private void grow(int x, int y) {
-        //TODO
+    private void grow(int x, int y, int cycle) {
+        if( matrix[x][y].getProbabilityY(cycle) > RandomNumbers.randFreq()) {
+            matrix[x][y - 1] = matrix[x][y];
+            matrix[x][y+1].addY();
+        }
+        if( matrix[x][y].getProbabilityX(cycle) > RandomNumbers.randFreq()) {
+            matrix[x][y - 1] = matrix[x][y];
+            matrix[x][y+1].addX();
+        }
     }
 
     public Default getObjectinPos(int x, int y) {

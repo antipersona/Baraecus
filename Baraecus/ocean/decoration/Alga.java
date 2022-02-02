@@ -8,6 +8,7 @@ public class Alga extends Default{
     private String[] names = { "alga0", "alga1" };
     private String[] symbols = { "🌵", "☘️" };
     private int type;
+    private final int max_q = 5;
 
     public Alga(int x, int y, Ocean ocean) {
         super(x, y, ocean);
@@ -25,16 +26,16 @@ public class Alga extends Default{
     }
 
     @Override
-    public double getProbabilityX(int quantity, int max_q) {
-        if (quantity > max_q) {
+    public double getProbabilityX(int grow_cycle) {
+        if (grow_cycle > max_q) {
             return 0;
         }
         return 0.1;
     }
 
     @Override
-    public double getProbabilityY(int quantity, int max_q) {
-        if (quantity > max_q) {
+    public double getProbabilityY(int grow_cycle) {
+        if (grow_cycle > max_q) {
             return 0;
         }
         return defGroupProbability;

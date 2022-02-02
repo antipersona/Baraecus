@@ -12,18 +12,16 @@ public class Kelp extends Default {
     }
 
     @Override
-    public double getProbabilityX(int quantity, int max_q) {
+    public double getProbabilityX(int grow_cycle) {
         return 0;
     }
 
     @Override
-    public double getProbabilityY(int quantity, int max_q) {
-
-        if (quantity > max_q) {
+    public double getProbabilityY(int grow_cycle) {
+        if (grow_cycle > max_q) {
             return 0;
         }
-          
-        return defGroupProbability + 1/quantity - 0.1;
+        return defGroupProbability + 1/(grow_cycle - 1) - 0.1;
     }
     
 }
