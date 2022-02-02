@@ -38,6 +38,6 @@ public class Alga extends Default{
         if (grow_cycle > max_q) {
             return 0;
         }
-        return defGroupProbability;
+        return 0.2;
     }
 }

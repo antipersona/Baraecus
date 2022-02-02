@@ -51,7 +51,7 @@ public class Creator {
 
         int sum = 0, all = MAX_X * MAX_Y;
         int cycle = 0;
-        while (cycle < 13) {
+        while (cycle < MAX_Y-2) {
             sum = 0;
  
             for (int y = 0; y < MAX_Y; y++) {
@@ -74,7 +74,7 @@ public class Creator {
                         }
                     }
                     if (!floor && y == ocean.getFloor() + 1) {
-                        if ( x != 0 && !matrix[x - 1][y].isOn())
+                        if ( x != 0 && !matrix[x - 1][y].isOn() && 2 == RandomNumbers.randInt(2))
                             matrix[x][y] = new Kelp(x, y, ocean);
                     }
 
