@@ -52,6 +52,8 @@ public class Creator {
         int sum = 0, all = MAX_X * MAX_Y;
         int cycle = 0;
         while (all > sum) {
+            sum = 0;
+ 
             for (int y = 0; y < MAX_Y; y++) {
                 for (int x = 0; x < MAX_X; x++) {
 
@@ -76,27 +78,32 @@ public class Creator {
                     }
 
                     if (matrix[x][y].isOn()) {
-                        grow(x, y, cycle);
+                        if (grow(x, y, cycle)) {
+                            sum--;
+                        }
                         matrix[x][y].turnOff();
                     } else {
                         sum++;
                     }
                 }
             }
+            cycle++;
         }
-        sum = 0;
-        cycle++;
     }
 
-    private void grow(int x, int y, int cycle) {
+    private Boolean grow(int x, int y, int cycle) {
+        Boolean ret = false;
         if( matrix[x][y].getProbabilityY(cycle) > RandomNumbers.randFreq()) {
             matrix[x][y - 1] = matrix[x][y];
             matrix[x][y+1].addY();
+            ret = true;
         }
         if( matrix[x][y].getProbabilityX(cycle) > RandomNumbers.randFreq()) {
-            matrix[x][y - 1] = matrix[x][y];
-            matrix[x][y+1].addX();
+            matrix[x + 1][y] = matrix[x][y];
+            matrix[x + 1][y].addX();
+            ret = true;
         }
+        return ret;
     }
 
     public Default getObjectinPos(int x, int y) {

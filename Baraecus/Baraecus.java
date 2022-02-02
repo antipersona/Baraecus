@@ -12,7 +12,7 @@ public class Baraecus {
     public static void main(String[] args) {
         seed = System.currentTimeMillis() % 1000;
         new RandomNumbers(seed);
-        int x = 50;
+        int x = 25;
         int y = 16;
         ocean = new Ocean(x, y, seed);
         ocean.create();

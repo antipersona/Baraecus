@@ -21,7 +21,7 @@ public class Kelp extends Default {
         if (grow_cycle > max_q) {
             return 0;
         }
-        return defGroupProbability + 1/(grow_cycle - 1) - 0.1;
+        return defGroupProbability + Math.abs(1/(grow_cycle - 5)) - 0.1;
     }
     
 }
