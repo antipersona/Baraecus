@@ -1,10 +1,9 @@
 package ocean.details;
 
-import ocean.Default;
 import ocean.Ocean;
 import ocean.random.RandomNumbers;
 
-public class Crab extends Default {
+public class Crab extends Animal {
 
     private String[] names = { "locus", "crab" };
     private String[] symbols = { "🦞", "🦀" };
@@ -15,8 +14,9 @@ public class Crab extends Default {
         type = RandomNumbers.randInt(names.length - 1);
         name = getName();
         symbol = getSymbol();
+        floor = true;
+
     }
-    
 
     public String getName() {
         return names[type];

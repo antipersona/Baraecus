@@ -1,7 +1,5 @@
 package ocean.decoration;
 
-import java.util.Random;
-
 import ocean.Default;
 import ocean.Ocean;
 import ocean.random.RandomNumbers;
@@ -10,8 +8,8 @@ public class Kelp extends Default {
 
     public Kelp(int x, int y, Ocean ocean) {
         super(x, y, ocean);
-        name = "kelp";
-        symbol = "K";
+        name = "Kelp";
+        symbol = "🌿";
     }
 
     @Override

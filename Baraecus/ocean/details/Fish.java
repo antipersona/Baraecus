@@ -1,10 +1,10 @@
 package ocean.details;
 
-import ocean.Default;
+
 import ocean.Ocean;
 import ocean.random.RandomNumbers;
 
-public class Fish extends Default{
+public class Fish extends Animal{
     private String[] names = { "fish0", "fish1", "fish2"};
     private String[] symbols = { "🐡", "🐠", "🐟"};
     private int type;
@@ -14,6 +14,7 @@ public class Fish extends Default{
         type = RandomNumbers.randInt(names.length - 1);
         name = getName();
         symbol = getSymbol();
+        water = true;
     }
 
     public String getName() {

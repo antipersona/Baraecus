@@ -47,4 +47,14 @@ public abstract class Default implements Groups {
         y++;
     }
 
+    public String getSymbol() {
+        return symbol;
+    }
+
+    public String getChar() {
+        String s = "";
+        s += name.toCharArray()[0];
+        return s;
+    }
+
 }

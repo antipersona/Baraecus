@@ -115,4 +115,8 @@ public class Creator {
         return matrix[x][y].getName();
     }
 
+    public String getSymbolinPos(int x, int y) {
+        return matrix[x][y].getChar();
+    }
+
 }

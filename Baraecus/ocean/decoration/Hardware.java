@@ -22,6 +22,7 @@ public class Hardware extends Default {
     }
 
     public String getSymbol() {
-        return symbols[type];
+        return "H";
+        //return symbols[type];
     }
 }

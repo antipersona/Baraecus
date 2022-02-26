@@ -16,7 +16,7 @@ public class Baraecus {
         int y = 16;
         ocean = new Ocean(x, y, seed);
         ocean.create();
-        System.out.print(ocean.toString());
+        System.out.print(ocean.toChars());
         out();
     }
 

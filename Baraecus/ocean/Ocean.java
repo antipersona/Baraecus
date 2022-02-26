@@ -42,6 +42,20 @@ public class Ocean {     //se encarga de crear el oceano
         }
         return str.toString();
     }
+    
+    public String toChars() {
+        StringBuilder str = new StringBuilder();
+        for (int y = 0; y < MAX_Y; y++){
+            for(int x = 0; x < MAX_X; x++)  {
+                str.append(creator.getSymbolinPos(x, y));
+                str.append(" ");
+            }
+            str.append("\n");
+        }
+        return str.toString();
+    }
+
+
 
     private void landscape_atributes() {
         floor = false;
@@ -61,15 +75,19 @@ public class Ocean {     //se encarga de crear el oceano
     
 
     public boolean isUnderWater(int y) {
-        return y < airY;
+        if (floor) {
+            return y < airY && y != getFloor();
+        }
+        else 
+            return y < airY;
     }
 
     public boolean isAir(int y) {
-        return airY != 0;
+        return y > airY;
     }
     
-    public int getWaves(int y) {
-        return airY;
+    public boolean isSurface(int y) {
+        return airY == y;
     }
 
     public int getFloor() {

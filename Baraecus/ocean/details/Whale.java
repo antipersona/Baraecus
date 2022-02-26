@@ -6,9 +6,9 @@ public class Whale extends Animal{
 
     public Whale(int x, int y, Ocean ocean) {
         super(x, y, ocean);
-        lungs = true;
+        symbol = getSymbol();
         water = true;
-        air = true;
+        surface = true;
     }
 
     @Override

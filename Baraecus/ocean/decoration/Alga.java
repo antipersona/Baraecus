@@ -22,7 +22,8 @@ public class Alga extends Default{
     }
 
     public String getSymbol() {
-        return symbols[type];
+        return "A";
+        //return symbols[type];
     }
 
     @Override

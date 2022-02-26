@@ -7,7 +7,7 @@ public class Wave extends Default{
     public Wave(int x, int y, Ocean ocean) {
         super(x, y, ocean);
         symbol = "🌊";
-        name = "wave";
+        name = "Wave";
         on = false;
     }
 }
