@@ -94,8 +94,8 @@ public class Ocean {     //se encarga de crear el oceano
         return MAX_Y - 2;
     }
     
-    public boolean isFloor() {
-        return floor;
+    public boolean isFloor(int y) {
+        return floor && y == getFloor();
     }
     
     public int getMaxY() {
