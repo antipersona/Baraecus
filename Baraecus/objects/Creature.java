@@ -26,5 +26,5 @@ public class Creature implements OceanObject {
     public int getY() {
         return y;
     }
-    
+
 }

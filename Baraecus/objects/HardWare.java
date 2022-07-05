@@ -14,7 +14,7 @@ public class HardWare implements OceanObject {
 
     @Override
     public String getEmoji() {
-       return emoji;      
+        return emoji;
     }
 
     @Override
@@ -25,6 +25,6 @@ public class HardWare implements OceanObject {
     @Override
     public int getY() {
         return y;
-    }  
+    }
 
 }
