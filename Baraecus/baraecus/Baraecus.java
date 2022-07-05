@@ -25,7 +25,7 @@ public class Baraecus {
         return sizeY;
     }
 
-    public static void start() {
+    public static void main(String[] args) {    //TODO parse args
         String rocket = "\uD83D\uDE80";
         System.out.println(rocket);
         System.out.println(EmojiParser.parseToUnicode(":rocket:"));
