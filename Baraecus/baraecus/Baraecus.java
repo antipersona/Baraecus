@@ -1,4 +1,6 @@
 package baraecus;
+
+import com.vdurmont.emoji.EmojiParser;
 /*
  * Its function is to create the ocean using OceanObjects
  */
@@ -24,6 +26,8 @@ public class Baraecus {
     }
 
     public static void start() {
-        System.out.println("\uD83D\uDE80");
+        String rocket = "\uD83D\uDE80";
+        System.out.println(rocket);
+        System.out.println(EmojiParser.parseToUnicode(":rocket:"));
     }
 }
