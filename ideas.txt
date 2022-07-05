@@ -50,3 +50,13 @@ bash
 hardware🪨🐚🦪🗿🏺
 
 a lo mejor deberia hacer un archivo externo para las probabilidades
+
+
+
+
+
+
+//NUEVO
+
+baraecus.java tiene acceso a los objetos y se encarga de crear un mar con ellos
+
